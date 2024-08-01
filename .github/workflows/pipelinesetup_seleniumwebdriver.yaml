@@ -1,4 +1,4 @@
-name: Selenium Ide CI
+name: Selenium WebDriver CI
 
 on: 
   push:
@@ -22,4 +22,14 @@ jobs:
     - name: Build
       run: dotnet build --no-restore
     - name: Run tests
-      run: dotnet test --verbosity normal
+      run: |
+      echo "Running TestProject1"
+      dotnet test TestProject1/TestProject1.csproj--verbosity normal
+    - name: Run tests
+      run: |
+      echo "Running TestProject2"
+      dotnet test TestProject2/TestProject2.csproj--verbosity normal
+    - name: Run tests
+      run: |
+      echo "Running TestProject3"
+      dotnet test TestProject3/TestProject3.csproj--verbosity normal
